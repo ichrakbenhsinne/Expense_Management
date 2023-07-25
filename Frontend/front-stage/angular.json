@@ -1,0 +1,146 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "front-stage": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/front-stage",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/js/vendor/aos/aos.css",
+              "src/assets/js/vendor/bootstrap/css/bootstrap.min.css",
+             "src/assets/js/vendor/bootstrap-icons/bootstrap-icons.css",
+             "src/assets/js/vendor/boxicons/css/boxicons.min.css",
+             "src/assets/js/vendor/glightbox/css/glightbox.min.css",
+             "src/assets/js/vendor/remixicon/remixicon.css",
+             "src/assets/js/vendor/swiper/swiper-bundle.min.css",
+             "src/assets/assets/css/style.css",
+           
+           
+             "src/assets/assets/vendor/boxicons/css/boxicons.min.css",
+             "src/assets/assets/vendor/quill/quill.snow.css",
+             "src/assets/assets/vendor/quill/quill.bubble.css",
+             "src/assets/assets/vendor/remixicon/remixicon.css",
+             "src/assets/assets/vendor/simple-datatables/style.css"
+             
+
+               ],
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+           "src/assets/js/vendor/aos/aos.js",
+           "src/assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js",
+           "src/assets/js/vendor/glightbox/js/glightbox.min.js",
+           "src/assets/js/vendor/glightbox/js/glightbox.min.js",
+           "src/assets/js/vendor/swiper/swiper-bundle.min.js",
+           "src/assets/js/vendor/waypoints/noframework.waypoints.js",
+           "src/assets/js/vendor/php-email-form/validate.js",
+           "src/assets/js/main.js",
+           "src/assets/assets/vendor/apexcharts/apexcharts.min.js",
+           "src/assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      
+           "src/assets/assets/vendor/echarts/echarts.min.js",
+           "src/assets/assets/vendor/quill/quill.min.js",
+           "src/assets/assets/vendor/simple-datatables/simple-datatables.js",
+           "src/assets/assets/vendor/tinymce/tinymce.min.js",
+           "src/assets/assets/vendor/php-email-form/validate.js",
+           "src/assets/assets/js/main.js"
+
+
+
+            
+           
+           
+           
+           
+          ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "front-stage:build:production"
+            },
+            "development": {
+              "browserTarget": "front-stage:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "front-stage:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets/js"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<router-outlet></router-outlet>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Plateforme de Vote en Ligne</title>
+	<style>
+		
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 60px;
+			background-color: white;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 0 20px;
+		}
+      
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-right: 20px;
+        }
+        .logo {
+          width: 100px;
+          height: 100px;
+          background-image: url("assets/images/logo/logo1.png");
+          background-size: cover;
+          transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+          transform: scale(1.1);
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+	</style>
+</head>
+<body>
+	
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <div class="logo">
+      
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+  
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="/home">Application de finaces</a></li>
+        <li><a class="nav-link scrollto" href="/test">Statistiques</a></li>
+        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+        <li><a class="nav-link scrollto " href="/login">Connexion</a></li>
+        <li><a class="nav-link scrollto" href="/inscrit">Inscription</a></li>
+        <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="getstarted scrollto" href="/login">Get Started</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+	
+</body>
+</html>

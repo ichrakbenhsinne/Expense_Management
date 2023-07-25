@@ -1,0 +1,610 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xxl-9">
+      <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Département {{ selectedDepartement }}</h2>
+            <p>Toutes les informations de votre département !</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-xxl-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card info-card revenue-card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Update</a></li>
+                <li><a class="dropdown-item" href="#">Delete</a></li>
+                <li><a class="dropdown-item" href="/stat">Statistiques</a></li>
+                <li><a class="dropdown-item" href="#">Prévision</a></li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Sales <span>| This Day</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img src="assets/assets/sales.png" alt="Money Icon" class="rounded-circle" width="40" height="40">
+                </div>
+                <div class="ps-3">
+                  <h6>1000.345</h6>
+                  <span class="text-success small pt-1 fw-bold">35%</span>
+                  <span class="text-muted small pt-2 ps-1">increase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <div class="card info-card revenue-card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Update</a></li>
+                <li><a class="dropdown-item" href="#">Delete</a></li>
+                <li><a class="dropdown-item" href="#">Statistiques</a></li>
+                <li><a class="dropdown-item" href="#">Prévision</a></li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Employées <span>| This Month</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img src="assets/assets/employee.png" alt="Money Icon" class="rounded-circle" width="40" height="40">
+                </div>
+                <div class="ps-3">
+                  <h6>10</h6>
+                  <span class="text-success small pt-1 fw-bold">3</span>
+                  <span class="text-muted small pt-2 ps-1">nouveau</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xxl-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-xxl-6">
+      <div class="row">
+        <div class="col-xxl-6" *ngFor="let depence of depences">
+          <div class="card info-card revenue-card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Update</a></li>
+                <li><a class="dropdown-item" href="#">Delete</a></li>
+                <li><a class="dropdown-item" href="#">Statistiques</a></li>
+                <li><a class="dropdown-item" href="#">Prévision</a></li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ depence.nomDepense }} <span>| This Month</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <img src="assets/monyicon.png" alt="Money Icon" class="rounded-circle" width="40" height="40">
+                </div>
+                <div class="ps-3">
+                  <h6>{{ depence.montant }}</h6>
+                  <span class="text-success small pt-1 fw-bold">3%</span>
+                  <span class="text-muted small pt-2 ps-1">increase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-3">
+      <!-- Default Tabs -->
+      <ul class="nav nav-tabs" id="myTabjustified" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-justified" type="button" role="tab" aria-controls="home-justified" aria-selected="true">Par Categorie</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-justified" type="button" role="tab" aria-controls="profile-justified" aria-selected="false">Par Date</button>
+        </li>
+      </ul>
+      
+      <div class="tab-content" id="myTabjustifiedContent">
+        <div class="tab-pane fade show active" id="home-justified" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row">
+            <div class="col">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Catégorie</th>
+                   
+                    <th scope="col">Montant</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let depence of depences">
+                    <td>{{ depence.categorie }}</td>
+                 
+                    <td>{{ depence.montant }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile-justified" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="form-group">
+            <label for="selectedDate">Sélectionnez une date :</label>
+            <input type="text" id="selectedDate" class="form-control" bsDatepicker [bsConfig]="datePickerConfig" placeholder="YYYY-MM-DD">
+          </div>
+        </div>
+      </div>
+      <!-- End Default Tabs -->
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <div class="plus-icon-overlay">
+    <a href="#" class="plus-icon-link" data-bs-toggle="modal" data-bs-target="#typeDepenseModal">
+      <img src="assets/plusicon.jpg" alt="Plus Icon" width="40" height="40">
+    </a>
+  </div>
+</div>
+
+
+
+<!-- Fenêtre modale avec les boutons radio -->
+<div class="modal fade" id="typeDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Type de dépense</label>
+           
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="annuelRadio" value="Defaut">
+              <label class="form-check-label" for="annuelRadio">
+                Par Defaut
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="mensuelRadio" value="Date">
+              <label class="form-check-label" for="mensuelRadio">
+                Par Date
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="hebdomadaireRadio" value="multiples">
+              <label class="form-check-label" for="hebdomadaireRadio">
+                Dates multiples
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="annuelRadio" value="Périodique">
+              <label class="form-check-label" for="annuelRadio">
+                Périodique
+              </label>
+            </div>
+           
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="annuelRadio" value="Hebdomadaire">
+              <label class="form-check-label" for="annuelRadio">
+                Hebdomadaire
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="annuelRadio" value="Mensuel">
+              <label class="form-check-label" for="annuelRadio">
+                Mensuel
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="depenseType" id="annuelRadio" value="Annuel">
+              <label class="form-check-label" for="annuelRadio">
+                Annuel
+              </label>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <!-- Appel de la méthode saveDepenseType() lors du clic sur le bouton "Suivant" -->
+            <button type="button" class="btn btn-primary" (click)="saveDepenseType()">Suivant</button>
+
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Fenêtre modale avec le formulaire par defaut // par date -->
+<div *ngIf="showForm && selectedDepenseType === 'Defaut'" class="modal fade" id="defaultDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date </label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fenêtre modale avec le formulaire par defaut // par date -->
+<div *ngIf="showForm && selectedDepenseType === 'Date'" class="modal fade" id="datetDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date </label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Fenêtre modale avec le formulaire par date multiples -->
+<div *ngIf="showForm && selectedDepenseType === 'multiples'" class="modal fade" id="multiplesDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date </label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Fenêtre modale avec le formulaire periodique -->
+<div *ngIf="showForm && selectedDepenseType === 'Périodique'" class="modal fade" id="periodiqueDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date debut</label>
+            <input type="date" class="form-control" id="inputDatedeb">
+          </div>
+
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date fin</label>
+            <input type="date" class="form-control" id="inputDatefin">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Fenêtre modale avec le formulaire depense hybdomadaire -->
+<div *ngIf="showForm && selectedDepenseType === 'Hebdomadaire'" class="modal fade" id="hebdomadaireDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense hebdomadaire</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date deb </label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Fenêtre modale avec le formulaire depense mensuel -->
+<div *ngIf="showForm && selectedDepenseType === 'Mensuel'" class="modal fade" id="mensuelleDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense mensuel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date deb </label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Fenêtre modale avec le formulaire depense hybdomadaire -->
+<div *ngIf="showForm && selectedDepenseType === 'Hebdomadaire'" class="modal fade" id="annuelleDepenseModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Nouvelle dépense Hebdomadaire</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulaire -->
+        <form>
+
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Montant</label>
+            <input type="number" class="form-control" id="inputText">
+          </div>
+          
+          <div class="mb-3">
+            <label for="inputText" class="form-label">Titre</label>
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Description</label>
+            <textarea class="form-control" id="inputPassword" style="height: 100px"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Date deb </label>
+            <input type="date" class="form-control" id="inputDate">
+          </div>
+         
+          <div class="mb-3">
+            <label class="form-label">Type de paiement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisir le type de paiement</option>
+              <option value="1">Chèque</option>
+              <option value="2">Facture</option>
+              <option value="3">Carte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+          </div>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+<br>
+<app-report></app-report>
+
